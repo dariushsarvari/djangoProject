@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}" height="250px;">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title | title }}</h5>
+        <p class="card-text">{{ product.description | truncatewords:15 }}</p>
+        <p>{{ product.price }}</p>
+        <a href="{% url 'products:detail' slug=product.slug %}" class="btn btn-danger">Show</a>
+    </div>
+</div>

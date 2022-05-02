@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block contents %}
+<h1>Products list</h1>
+
+<div class="container">
+    <div class="row">
+        {% for product in products_list %}
+            <div class="col-md-3" style="border: #ff0000 2px solid">
+                {% include 'product_component.html' with product=product %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<br>
+
+{% for product in object_list %}
+<h3>{{ product.title }}</h3>
+<a href="/products-cb/{{ product.id }}">Read More...</a>
+{% endfor %}
+
+
+
+{% endblock %}
